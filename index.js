@@ -3,6 +3,7 @@ var gamePattern = [];
 var buttonColors = ["green","red","yellow","blue"];
 
 
+
 function nextSequence(){
     $("h1").text("Level " + (gamePattern.length + 1));
     var n = Math.random();
@@ -17,14 +18,11 @@ function displayColor(){
     gamePattern.push(randomChosenColor);
     var lastGamePattern = gamePattern.length - 1;
     buttonPress(gamePattern[lastGamePattern]);
-    console.log("hey");
 }
 
 
 $(document).one("keypress",function(e){
-    if(e.key == "a"){
         displayColor();
-    }
 })
 
 var clickPattern = [];
@@ -59,11 +57,9 @@ function validation(answer,input){
 function startAgain(){
     
     $(document).unbind().one("keypress", function(e){
-        console.log("hallo");
         clickPattern = [];
         gamePattern = [];
         displayColor();
-        console.log("ok")
     })
 }
 
